@@ -15,6 +15,9 @@ namespace UretimDemo.Stoklar
         {
             InitializeComponent();
             urt = new Uretim();
+
+            //textEdit_grup_aciklama.Properties.ReadOnly = true;
+            textEdit_grup_aciklama.Enabled = false;
         }
 
         private void simpleButton_stok_listesi_Click(object sender, EventArgs e)
@@ -23,16 +26,19 @@ namespace UretimDemo.Stoklar
             stokListesi.ShowDialog();
             textEdit_stok_kodu.Text = stokListesi.StokKodu;
 
-            GetDataWithStokKodu();
+            GetDataListWithStokKodu();
         }
 
         private void simpleButton_grup_listesi_Click(object sender, EventArgs e)
         {
             StokGruplari stokGruplari = new StokGruplari();
             stokGruplari.ShowDialog();
+
+            textEdit_grup_kodu.Text = stokGruplari.GrupKodu;
+            textEdit_grup_aciklama.Text = stokGruplari.GrupAdi;
         }
 
-        private void GetDataWithStokKodu()
+        private void GetDataListWithStokKodu()
         {
             string query = $"select * from stok where stok_kodu = '" + textEdit_stok_kodu.Text + "'";
             DataTable dt = urt.get_pgsql_datatable(query);
@@ -42,18 +48,33 @@ namespace UretimDemo.Stoklar
                 textEdit_grup_kodu.Text = dt.Rows[0]["grup_kodu"].ToString();
                 textEdit_fiyat.Text = dt.Rows[0]["fiyat"].ToString();
                 textEdit_kdv_orani.Text = dt.Rows[0]["kdv_orani"].ToString();
+
+                GetGrupKodu();
             }
             else
             {
+                ClearTextEdit(false);
                 XtraMessageBox.Show(this, $"{textEdit_stok_kodu.Text} stok kodu bulunamadı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void ClearTextEdit(bool true_stok_kodu)
+        {
+            if (true_stok_kodu)
+                textEdit_stok_kodu.Text = string.Empty;
+
+            textEdit_stok_adi.Text = string.Empty;
+            textEdit_grup_kodu.Text = string.Empty;
+            textEdit_grup_aciklama.Text = string.Empty;
+            textEdit_fiyat.Text = string.Empty;
+            textEdit_kdv_orani.Text = string.Empty;
         }
 
         private void textEdit_stok_kodu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                GetDataWithStokKodu();
+                GetDataListWithStokKodu();
             }
         }
 
@@ -61,6 +82,40 @@ namespace UretimDemo.Stoklar
         {
             if (string.IsNullOrEmpty(textEdit_stok_kodu.Text.Trim()))
                 textEdit_stok_kodu.Focus();
+        }
+
+        private void StokKarti_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton_temizle_Click(object sender, EventArgs e)
+        {
+            ClearTextEdit(true);
+            textEdit_stok_kodu.Focus();
+        }
+
+        private void GetGrupKodu()
+        {
+            string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
+            DataTable dt = urt.get_pgsql_datatable(query);
+            if (dt.Rows.Count > 0)
+            {
+                textEdit_grup_aciklama.Text = dt.Rows[0]["grup_adi"].ToString();
+            }
+            else
+            {
+                textEdit_grup_aciklama.Text = string.Empty;
+                XtraMessageBox.Show(this, $"{textEdit_grup_kodu.Text} grup kodu bulunamadı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void textEdit_grup_kodu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                GetGrupKodu();
+            }
         }
     }
 }

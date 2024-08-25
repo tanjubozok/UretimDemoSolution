@@ -46,6 +46,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton_grup_listesi = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton_temizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_kodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_adi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_kodu.Properties)).BeginInit();
@@ -96,6 +97,7 @@
             this.textEdit_grup_kodu.Name = "textEdit_grup_kodu";
             this.textEdit_grup_kodu.Size = new System.Drawing.Size(150, 20);
             this.textEdit_grup_kodu.TabIndex = 3;
+            this.textEdit_grup_kodu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit_grup_kodu_KeyDown);
             // 
             // labelControl3
             // 
@@ -209,11 +211,22 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Fiyat Bilgileri";
             // 
+            // simpleButton_temizle
+            // 
+            this.simpleButton_temizle.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_temizle.Image")));
+            this.simpleButton_temizle.Location = new System.Drawing.Point(215, 198);
+            this.simpleButton_temizle.Name = "simpleButton_temizle";
+            this.simpleButton_temizle.Size = new System.Drawing.Size(65, 25);
+            this.simpleButton_temizle.TabIndex = 4;
+            this.simpleButton_temizle.Text = "Temizle";
+            this.simpleButton_temizle.Click += new System.EventHandler(this.simpleButton_temizle_Click);
+            // 
             // StokKarti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 227);
+            this.Controls.Add(this.simpleButton_temizle);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.simpleButton_kaydet);
@@ -221,6 +234,7 @@
             this.Name = "StokKarti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stok Kartı";
+            this.Load += new System.EventHandler(this.StokKarti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_kodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_adi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_kodu.Properties)).EndInit();
@@ -256,5 +270,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.SimpleButton simpleButton_grup_listesi;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_temizle;
     }
 }
