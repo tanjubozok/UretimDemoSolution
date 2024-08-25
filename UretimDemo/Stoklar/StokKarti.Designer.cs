@@ -60,7 +60,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(7, 25);
+            this.labelControl1.Location = new System.Drawing.Point(7, 28);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 13);
             this.labelControl1.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             // textEdit_stok_kodu
             // 
-            this.textEdit_stok_kodu.Location = new System.Drawing.Point(61, 23);
+            this.textEdit_stok_kodu.Location = new System.Drawing.Point(61, 26);
             this.textEdit_stok_kodu.Name = "textEdit_stok_kodu";
             this.textEdit_stok_kodu.Size = new System.Drawing.Size(150, 20);
             this.textEdit_stok_kodu.TabIndex = 0;
@@ -77,14 +77,14 @@
             // 
             // textEdit_stok_adi
             // 
-            this.textEdit_stok_adi.Location = new System.Drawing.Point(61, 49);
+            this.textEdit_stok_adi.Location = new System.Drawing.Point(61, 51);
             this.textEdit_stok_adi.Name = "textEdit_stok_adi";
-            this.textEdit_stok_adi.Size = new System.Drawing.Size(150, 20);
+            this.textEdit_stok_adi.Size = new System.Drawing.Size(352, 20);
             this.textEdit_stok_adi.TabIndex = 2;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 51);
+            this.labelControl2.Location = new System.Drawing.Point(16, 54);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(39, 13);
             this.labelControl2.TabIndex = 2;
@@ -92,14 +92,14 @@
             // 
             // textEdit_grup_kodu
             // 
-            this.textEdit_grup_kodu.Location = new System.Drawing.Point(61, 75);
+            this.textEdit_grup_kodu.Location = new System.Drawing.Point(61, 78);
             this.textEdit_grup_kodu.Name = "textEdit_grup_kodu";
             this.textEdit_grup_kodu.Size = new System.Drawing.Size(150, 20);
             this.textEdit_grup_kodu.TabIndex = 3;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(5, 77);
+            this.labelControl3.Location = new System.Drawing.Point(5, 80);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(50, 13);
             this.labelControl3.TabIndex = 4;
@@ -138,7 +138,7 @@
             // simpleButton_sil
             // 
             this.simpleButton_sil.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_sil.Image")));
-            this.simpleButton_sil.Location = new System.Drawing.Point(301, 211);
+            this.simpleButton_sil.Location = new System.Drawing.Point(286, 198);
             this.simpleButton_sil.Name = "simpleButton_sil";
             this.simpleButton_sil.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_sil.TabIndex = 3;
@@ -147,7 +147,7 @@
             // simpleButton_kaydet
             // 
             this.simpleButton_kaydet.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_kaydet.Image")));
-            this.simpleButton_kaydet.Location = new System.Drawing.Point(372, 211);
+            this.simpleButton_kaydet.Location = new System.Drawing.Point(357, 198);
             this.simpleButton_kaydet.Name = "simpleButton_kaydet";
             this.simpleButton_kaydet.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_kaydet.TabIndex = 2;
@@ -159,13 +159,13 @@
             this.simpleButton_stok_listesi.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.simpleButton_stok_listesi.Location = new System.Drawing.Point(217, 23);
             this.simpleButton_stok_listesi.Name = "simpleButton_stok_listesi";
-            this.simpleButton_stok_listesi.Size = new System.Drawing.Size(37, 22);
+            this.simpleButton_stok_listesi.Size = new System.Drawing.Size(40, 25);
             this.simpleButton_stok_listesi.TabIndex = 1;
             this.simpleButton_stok_listesi.Click += new System.EventHandler(this.simpleButton_stok_listesi_Click);
             // 
             // textEdit_grup_aciklama
             // 
-            this.textEdit_grup_aciklama.Location = new System.Drawing.Point(260, 75);
+            this.textEdit_grup_aciklama.Location = new System.Drawing.Point(263, 77);
             this.textEdit_grup_aciklama.Name = "textEdit_grup_aciklama";
             this.textEdit_grup_aciklama.Size = new System.Drawing.Size(150, 20);
             this.textEdit_grup_aciklama.TabIndex = 5;
@@ -181,9 +181,9 @@
             this.groupControl1.Controls.Add(this.textEdit_stok_adi);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.textEdit_grup_kodu);
-            this.groupControl1.Location = new System.Drawing.Point(12, 7);
+            this.groupControl1.Location = new System.Drawing.Point(2, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(425, 106);
+            this.groupControl1.Size = new System.Drawing.Size(420, 107);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Genel Bilgiler";
             // 
@@ -191,9 +191,9 @@
             // 
             this.simpleButton_grup_listesi.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_grup_listesi.Image")));
             this.simpleButton_grup_listesi.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton_grup_listesi.Location = new System.Drawing.Point(217, 74);
+            this.simpleButton_grup_listesi.Location = new System.Drawing.Point(217, 75);
             this.simpleButton_grup_listesi.Name = "simpleButton_grup_listesi";
-            this.simpleButton_grup_listesi.Size = new System.Drawing.Size(37, 22);
+            this.simpleButton_grup_listesi.Size = new System.Drawing.Size(40, 25);
             this.simpleButton_grup_listesi.TabIndex = 4;
             this.simpleButton_grup_listesi.Click += new System.EventHandler(this.simpleButton_grup_listesi_Click);
             // 
@@ -203,9 +203,9 @@
             this.groupControl2.Controls.Add(this.labelControl4);
             this.groupControl2.Controls.Add(this.labelControl5);
             this.groupControl2.Controls.Add(this.textEdit_kdv_orani);
-            this.groupControl2.Location = new System.Drawing.Point(12, 119);
+            this.groupControl2.Location = new System.Drawing.Point(2, 116);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(425, 86);
+            this.groupControl2.Size = new System.Drawing.Size(420, 76);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Fiyat Bilgileri";
             // 
@@ -213,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 242);
+            this.ClientSize = new System.Drawing.Size(425, 227);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.simpleButton_kaydet);

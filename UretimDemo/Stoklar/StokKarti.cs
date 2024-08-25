@@ -9,6 +9,8 @@ namespace UretimDemo.Stoklar
     public partial class StokKarti : Form
     {
         private Uretim urt;
+        public string StokKodu { get; set; }
+
         public StokKarti()
         {
             InitializeComponent();
@@ -19,6 +21,9 @@ namespace UretimDemo.Stoklar
         {
             StokListesi stokListesi = new StokListesi();
             stokListesi.ShowDialog();
+            textEdit_stok_kodu.Text = stokListesi.StokKodu;
+
+            GetDataWithStokKodu();
         }
 
         private void simpleButton_grup_listesi_Click(object sender, EventArgs e)
@@ -27,23 +32,28 @@ namespace UretimDemo.Stoklar
             stokGruplari.ShowDialog();
         }
 
+        private void GetDataWithStokKodu()
+        {
+            string query = $"select * from stok where stok_kodu = '" + textEdit_stok_kodu.Text + "'";
+            DataTable dt = urt.get_pgsql_datatable(query);
+            if (dt.Rows.Count > 0)
+            {
+                textEdit_stok_adi.Text = dt.Rows[0]["stok_adi"].ToString();
+                textEdit_grup_kodu.Text = dt.Rows[0]["grup_kodu"].ToString();
+                textEdit_fiyat.Text = dt.Rows[0]["fiyat"].ToString();
+                textEdit_kdv_orani.Text = dt.Rows[0]["kdv_orani"].ToString();
+            }
+            else
+            {
+                XtraMessageBox.Show(this, $"{textEdit_stok_kodu.Text} stok kodu bulunamadı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         private void textEdit_stok_kodu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string query = $"select * from stok where stok_kodu = '" + textEdit_stok_kodu.Text + "'";
-                DataTable dt = urt.get_pgsql_datatable(query);
-                if (dt.Rows.Count > 0)
-                {
-                    textEdit_stok_adi.Text = dt.Rows[0]["stok_adi"].ToString();
-                    textEdit_grup_kodu.Text = dt.Rows[0]["grup_kodu"].ToString();
-                    textEdit_fiyat.Text = dt.Rows[0]["fiyat"].ToString();
-                    textEdit_kdv_orani.Text = dt.Rows[0]["kdv_orani"].ToString();
-                }
-                else
-                {
-                    XtraMessageBox.Show(this, $"{textEdit_stok_kodu.Text} stok kodu bulunamadı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                GetDataWithStokKodu();
             }
         }
 

@@ -55,7 +55,7 @@
             this.gridControl_stok_listesi.Location = new System.Drawing.Point(2, 20);
             this.gridControl_stok_listesi.MainView = this.gridView1;
             this.gridControl_stok_listesi.Name = "gridControl_stok_listesi";
-            this.gridControl_stok_listesi.Size = new System.Drawing.Size(356, 254);
+            this.gridControl_stok_listesi.Size = new System.Drawing.Size(356, 262);
             this.gridControl_stok_listesi.TabIndex = 0;
             this.gridControl_stok_listesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -72,9 +72,9 @@
             this.groupControl1.Controls.Add(this.textEdit_stok_kodu);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textEdit_stok_adi);
-            this.groupControl1.Location = new System.Drawing.Point(12, 12);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(360, 77);
+            this.groupControl1.Size = new System.Drawing.Size(360, 76);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Stok Kartı Bilgileri";
             // 
@@ -111,16 +111,16 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl_stok_listesi);
-            this.groupControl2.Location = new System.Drawing.Point(12, 95);
+            this.groupControl2.Location = new System.Drawing.Point(3, 85);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(360, 276);
+            this.groupControl2.Size = new System.Drawing.Size(360, 284);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Stok Listesi";
             // 
             // simpleButton_kaydet
             // 
             this.simpleButton_kaydet.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_kaydet.Image")));
-            this.simpleButton_kaydet.Location = new System.Drawing.Point(307, 375);
+            this.simpleButton_kaydet.Location = new System.Drawing.Point(296, 373);
             this.simpleButton_kaydet.Name = "simpleButton_kaydet";
             this.simpleButton_kaydet.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_kaydet.TabIndex = 2;
@@ -129,7 +129,7 @@
             // simpleButton_sil
             // 
             this.simpleButton_sil.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_sil.Image")));
-            this.simpleButton_sil.Location = new System.Drawing.Point(236, 375);
+            this.simpleButton_sil.Location = new System.Drawing.Point(225, 373);
             this.simpleButton_sil.Name = "simpleButton_sil";
             this.simpleButton_sil.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_sil.TabIndex = 3;
@@ -139,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(383, 408);
+            this.ClientSize = new System.Drawing.Size(366, 402);
             this.Controls.Add(this.simpleButton_kaydet);
             this.Controls.Add(this.simpleButton_sil);
             this.Controls.Add(this.groupControl1);
