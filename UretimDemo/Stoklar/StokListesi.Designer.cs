@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StokListesi));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButton_stok_listesi = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit_stok_kodu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -44,7 +45,9 @@
             this.grup_kodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.fiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.kdv_orani = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton_stok_listesi = new DevExpress.XtraEditors.SimpleButton();
+            this.grup_adi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEdit_grup_adi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_kodu.Properties)).BeginInit();
@@ -54,6 +57,7 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_stok_listesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_stok_listesi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -65,13 +69,25 @@
             this.groupControl1.Controls.Add(this.textEdit_stok_kodu);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.textEdit_stok_adi);
+            this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.labelControl3);
+            this.groupControl1.Controls.Add(this.textEdit_grup_adi);
             this.groupControl1.Controls.Add(this.textEdit_grup_kodu);
             this.groupControl1.Location = new System.Drawing.Point(2, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(645, 102);
+            this.groupControl1.Size = new System.Drawing.Size(1092, 124);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Stok Kartı Bilgileri";
+            // 
+            // simpleButton_stok_listesi
+            // 
+            this.simpleButton_stok_listesi.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_stok_listesi.Image")));
+            this.simpleButton_stok_listesi.Location = new System.Drawing.Point(217, 23);
+            this.simpleButton_stok_listesi.Name = "simpleButton_stok_listesi";
+            this.simpleButton_stok_listesi.Size = new System.Drawing.Size(81, 41);
+            this.simpleButton_stok_listesi.TabIndex = 5;
+            this.simpleButton_stok_listesi.Text = "Liste";
+            this.simpleButton_stok_listesi.Click += new System.EventHandler(this.simpleButton_stok_listesi_Click);
             // 
             // labelControl1
             // 
@@ -127,9 +143,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl2.Controls.Add(this.gridControl_stok_listesi);
-            this.groupControl2.Location = new System.Drawing.Point(2, 111);
+            this.groupControl2.Location = new System.Drawing.Point(2, 133);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(645, 289);
+            this.groupControl2.Size = new System.Drawing.Size(1092, 544);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Stok Listesi";
             // 
@@ -141,7 +157,7 @@
             this.gridControl_stok_listesi.Location = new System.Drawing.Point(2, 20);
             this.gridControl_stok_listesi.MainView = this.gridView_stok_listesi;
             this.gridControl_stok_listesi.Name = "gridControl_stok_listesi";
-            this.gridControl_stok_listesi.Size = new System.Drawing.Size(641, 267);
+            this.gridControl_stok_listesi.Size = new System.Drawing.Size(1088, 522);
             this.gridControl_stok_listesi.TabIndex = 0;
             this.gridControl_stok_listesi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView_stok_listesi});
@@ -154,7 +170,8 @@
             this.stok_adi,
             this.grup_kodu,
             this.fiyat,
-            this.kdv_orani});
+            this.kdv_orani,
+            this.grup_adi});
             this.gridView_stok_listesi.GridControl = this.gridControl_stok_listesi;
             this.gridView_stok_listesi.Name = "gridView_stok_listesi";
             this.gridView_stok_listesi.OptionsBehavior.Editable = false;
@@ -190,7 +207,7 @@
             this.fiyat.FieldName = "fiyat";
             this.fiyat.Name = "fiyat";
             this.fiyat.Visible = true;
-            this.fiyat.VisibleIndex = 3;
+            this.fiyat.VisibleIndex = 4;
             // 
             // kdv_orani
             // 
@@ -198,23 +215,37 @@
             this.kdv_orani.FieldName = "kdv_orani";
             this.kdv_orani.Name = "kdv_orani";
             this.kdv_orani.Visible = true;
-            this.kdv_orani.VisibleIndex = 4;
+            this.kdv_orani.VisibleIndex = 5;
             // 
-            // simpleButton_stok_listesi
+            // grup_adi
             // 
-            this.simpleButton_stok_listesi.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_stok_listesi.Image")));
-            this.simpleButton_stok_listesi.Location = new System.Drawing.Point(217, 23);
-            this.simpleButton_stok_listesi.Name = "simpleButton_stok_listesi";
-            this.simpleButton_stok_listesi.Size = new System.Drawing.Size(81, 72);
-            this.simpleButton_stok_listesi.TabIndex = 5;
-            this.simpleButton_stok_listesi.Text = "Liste";
-            this.simpleButton_stok_listesi.Click += new System.EventHandler(this.simpleButton_stok_listesi_Click);
+            this.grup_adi.Caption = "Grup Adı";
+            this.grup_adi.FieldName = "grup_adi";
+            this.grup_adi.Name = "grup_adi";
+            this.grup_adi.Visible = true;
+            this.grup_adi.VisibleIndex = 3;
+            // 
+            // textEdit_grup_adi
+            // 
+            this.textEdit_grup_adi.Location = new System.Drawing.Point(61, 99);
+            this.textEdit_grup_adi.Name = "textEdit_grup_adi";
+            this.textEdit_grup_adi.Size = new System.Drawing.Size(150, 20);
+            this.textEdit_grup_adi.TabIndex = 2;
+            this.textEdit_grup_adi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit_grup_kodu_KeyDown);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(14, 102);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(41, 13);
+            this.labelControl4.TabIndex = 4;
+            this.labelControl4.Text = "Grup Adı";
             // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 404);
+            this.ClientSize = new System.Drawing.Size(1096, 681);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Name = "StokListesi";
@@ -231,6 +262,7 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_stok_listesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_stok_listesi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +285,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn fiyat;
         private DevExpress.XtraGrid.Columns.GridColumn kdv_orani;
         private DevExpress.XtraEditors.SimpleButton simpleButton_stok_listesi;
+        private DevExpress.XtraGrid.Columns.GridColumn grup_adi;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit textEdit_grup_adi;
     }
 }
