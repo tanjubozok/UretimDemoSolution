@@ -25,7 +25,7 @@ namespace UretimDemo.Stoklar
         private void FullData()
         {
             string query = "select * from stok order by stok_kodu";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            DataTable dt = urt.get_sqlserver_datatable(query);
             if (dt.Rows.Count > 0)
             {
                 gridControl_stok_listesi.DataSource = dt;
@@ -42,8 +42,8 @@ namespace UretimDemo.Stoklar
             string stok_adi = textEdit_stok_adi.Text.Trim();
             string grup_kodu = textEdit_grup_kodu.Text.Trim();
 
-            string query = $@"select * from stok where stok_kodu ilike '%" + stok_kodu + "%' and stok_adi ilike '%" + stok_adi + "%' and grup_kodu ilike '%" + grup_kodu + "%' order by stok_kodu";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            string query = $@"select * from stok where stok_kodu like '%" + stok_kodu + "%' and stok_adi like '%" + stok_adi + "%' and grup_kodu like '%" + grup_kodu + "%' order by stok_kodu";
+            DataTable dt = urt.get_sqlserver_datatable(query);
 
             gridControl_stok_listesi.DataSource = dt;
             gridControl_stok_listesi.Refresh();

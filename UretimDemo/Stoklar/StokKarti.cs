@@ -41,7 +41,7 @@ namespace UretimDemo.Stoklar
         private void GetDataListWithStokKodu()
         {
             string query = $"select * from stok where stok_kodu = '" + textEdit_stok_kodu.Text + "'";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            DataTable dt = urt.get_sqlserver_datatable(query);
             if (dt.Rows.Count > 0)
             {
                 textEdit_stok_adi.Text = dt.Rows[0]["stok_adi"].ToString();
@@ -98,7 +98,7 @@ namespace UretimDemo.Stoklar
         private void GetGrupKodu()
         {
             string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            DataTable dt = urt.get_sqlserver_datatable(query);
             if (dt.Rows.Count > 0)
             {
                 textEdit_grup_aciklama.Text = dt.Rows[0]["grup_adi"].ToString();

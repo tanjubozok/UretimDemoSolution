@@ -26,7 +26,7 @@ namespace UretimDemo.Stoklar
         private void GetDataList()
         {
             string query = $"select * from grup order by grup_kodu";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            DataTable dt = urt.get_sqlserver_datatable(query);
             if (dt.Rows.Count > 0)
             {
                 gridControl_stok_grup_listesi.DataSource = dt;
@@ -42,7 +42,7 @@ namespace UretimDemo.Stoklar
             if (e.KeyCode == Keys.Enter)
             {
                 string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                DataTable dt = urt.get_pgsql_datatable(query);
+                DataTable dt = urt.get_sqlserver_datatable(query);
                 if (dt.Rows.Count > 0)
                 {
                     textEdit_grup_adi.Text = dt.Rows[0]["grup_adi"].ToString();
@@ -111,11 +111,11 @@ namespace UretimDemo.Stoklar
             else
             {
                 string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                DataTable dt = urt.get_pgsql_datatable(query);
+                DataTable dt = urt.get_sqlserver_datatable(query);
                 if (dt.Rows.Count > 0)
                 {
                     string queryDelete = "delete from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                    int result = urt.add_pgsql(queryDelete);
+                    int result = urt.add_sqlserver(queryDelete);
                     if (result > 0)
                     {
                         ClearTextEdit();
@@ -148,11 +148,11 @@ namespace UretimDemo.Stoklar
             else
             {
                 string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                DataTable dt = urt.get_pgsql_datatable(query);
+                DataTable dt = urt.get_sqlserver_datatable(query);
                 if (dt.Rows.Count > 0)
                 {
                     string queryUpdate = "update grup set grup_adi = '" + textEdit_grup_adi.Text.Trim() + "' where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                    int result = urt.add_pgsql(queryUpdate);
+                    int result = urt.add_sqlserver(queryUpdate);
                     if (result > 0)
                     {
                         ClearTextEdit();
@@ -170,7 +170,7 @@ namespace UretimDemo.Stoklar
                 else
                 {
                     string queryInsert = "insert into grup (grup_kodu, grup_adi) values('" + textEdit_grup_kodu.Text.Trim() + "', '" + textEdit_grup_adi.Text.Trim() + "')";
-                    int result = urt.add_pgsql(queryInsert);
+                    int result = urt.add_sqlserver(queryInsert);
                     if (result > 0)
                     {
                         ClearTextEdit();
