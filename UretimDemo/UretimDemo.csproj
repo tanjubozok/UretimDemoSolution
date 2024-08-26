@@ -101,6 +101,7 @@
     <Compile Include="AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CustomXtraMessageBoxLocalizer.cs" />
     <Compile Include="Helpers\DbConnection.cs" />
     <Compile Include="Helpers\Uretim.cs" />
     <Compile Include="Program.cs" />

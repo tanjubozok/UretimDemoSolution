@@ -114,19 +114,23 @@ namespace UretimDemo.Stoklar
                 DataTable dt = urt.get_sqlserver_datatable(query);
                 if (dt.Rows.Count > 0)
                 {
-                    string queryDelete = "delete from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                    int result = urt.add_sqlserver(queryDelete);
-                    if (result > 0)
+                    DialogResult dr = XtraMessageBox.Show($"Grup Kodu : {textEdit_grup_kodu.Text} silmek istediğinize emin misiniz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
                     {
-                        ClearTextEdit();
-                        GetDataList();
-                        gridControl_stok_grup_listesi.Refresh();
+                        string queryDelete = "delete from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
+                        int result = urt.add_sqlserver(queryDelete);
+                        if (result > 0)
+                        {
+                            ClearTextEdit();
+                            GetDataList();
+                            gridControl_stok_grup_listesi.Refresh();
 
-                        XtraMessageBox.Show(this, "Silme başarılı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show(this, "Silme başarısız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            XtraMessageBox.Show(this, "Silme başarılı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            XtraMessageBox.Show(this, "Silme başarısız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
                 else
@@ -151,21 +155,7 @@ namespace UretimDemo.Stoklar
                 DataTable dt = urt.get_sqlserver_datatable(query);
                 if (dt.Rows.Count > 0)
                 {
-                    string queryUpdate = "update grup set grup_adi = '" + textEdit_grup_adi.Text.Trim() + "' where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
-                    int result = urt.add_sqlserver(queryUpdate);
-                    if (result > 0)
-                    {
-                        ClearTextEdit();
-
-                        GetDataList();
-                        gridControl_stok_grup_listesi.Refresh();
-
-                        XtraMessageBox.Show(this, "Güncelleme başarılı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        XtraMessageBox.Show(this, "Güncelleme başarısız, hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    XtraMessageBox.Show(this, $"Grup Kodu : {textEdit_grup_kodu.Text} databasede kayıtlıdır, ekleme başarısız, hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -192,6 +182,42 @@ namespace UretimDemo.Stoklar
         {
             if (string.IsNullOrWhiteSpace(textEdit_grup_kodu.Text))
                 textEdit_grup_kodu.Focus();
+        }
+
+        private void simpleButton_guncelle_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textEdit_grup_kodu.Text) || string.IsNullOrWhiteSpace(textEdit_grup_adi.Text))
+            {
+                textEdit_grup_kodu.Focus();
+                XtraMessageBox.Show(this, "Lütfen tüm alanları doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string query = "select grup_adi from grup where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
+                DataTable dt = urt.get_sqlserver_datatable(query);
+                if (dt.Rows.Count > 0)
+                {
+                    string queryUpdate = "update grup set grup_adi = '" + textEdit_grup_adi.Text.Trim() + "' where grup_kodu = '" + textEdit_grup_kodu.Text.Trim() + "'";
+                    int result = urt.add_sqlserver(queryUpdate);
+                    if (result > 0)
+                    {
+                        ClearTextEdit();
+
+                        GetDataList();
+                        gridControl_stok_grup_listesi.Refresh();
+
+                        XtraMessageBox.Show(this, "Güncelleme başarılı", "Bilgilendirme", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show(this, $"Grup Kodu : {textEdit_grup_kodu.Text} databasede kayıtlı değildir, güncelleme başarısız, hata oluştu", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    XtraMessageBox.Show(this, "Kayıt başarısız", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
