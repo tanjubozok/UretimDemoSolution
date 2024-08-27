@@ -24,8 +24,11 @@ namespace UretimDemo.Stoklar
 
         private void FullData()
         {
-            string query = "select * from stok order by stok_kodu";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            string query = $@"select stok_kodu, stok_adi, g.grup_kodu, g.grup_adi, fiyat, kdv_orani 
+                                from stok as s
+                                left join grup as g on s.grup_kodu = g.grup_kodu
+                                order by stok_kodu asc";
+            DataTable dt = urt.get_sqlserver_datatable(query);
             if (dt.Rows.Count > 0)
             {
                 gridControl_stok_listesi.DataSource = dt;
@@ -41,9 +44,13 @@ namespace UretimDemo.Stoklar
             string stok_kodu = textEdit_stok_kodu.Text.Trim();
             string stok_adi = textEdit_stok_adi.Text.Trim();
             string grup_kodu = textEdit_grup_kodu.Text.Trim();
+            string grup_adi = textEdit_grup_adi.Text.Trim();
+            string query = $@"select stok_kodu, stok_adi, g.grup_kodu, g.grup_adi,fiyat,kdv_orani 
+                            from stok as s
+                            left join grup as g on s.grup_kodu = g.grup_kodu
+                            where stok_kodu like '%" + stok_kodu + "%' and stok_adi like '%" + stok_adi + "%' and g.grup_kodu like '%" + grup_kodu + "%' and g.grup_adi like '%" + grup_adi + "%' order by stok_kodu asc";
 
-            string query = $@"select * from stok where stok_kodu ilike '%" + stok_kodu + "%' and stok_adi ilike '%" + stok_adi + "%' and grup_kodu ilike '%" + grup_kodu + "%' order by stok_kodu";
-            DataTable dt = urt.get_pgsql_datatable(query);
+            DataTable dt = urt.get_sqlserver_datatable(query);
 
             gridControl_stok_listesi.DataSource = dt;
             gridControl_stok_listesi.Refresh();
@@ -59,6 +66,7 @@ namespace UretimDemo.Stoklar
             textEdit_stok_kodu.Text = string.Empty;
             textEdit_stok_adi.Text = string.Empty;
             textEdit_grup_kodu.Text = string.Empty;
+            textEdit_grup_adi.Text = string.Empty;
         }
 
         private void textEdit_stok_kodu_KeyDown(object sender, KeyEventArgs e)

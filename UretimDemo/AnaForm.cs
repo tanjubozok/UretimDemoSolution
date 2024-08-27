@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using DevExpress.XtraEditors.Controls;
+using System.Windows.Forms;
+using UretimDemo.Helpers;
 using UretimDemo.Stoklar;
 
 namespace UretimDemo
@@ -14,6 +16,11 @@ namespace UretimDemo
         {
             StokKarti stokKarti = new StokKarti();
             stokKarti.Show();
+        }
+
+        private void AnaForm_Load(object sender, System.EventArgs e)
+        {
+            Localizer.Active = new CustomXtraMessageBoxLocalizer();
         }
     }
 }

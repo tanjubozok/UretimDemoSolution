@@ -42,6 +42,7 @@
             this.simpleButton_kaydet = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_sil = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton_temizle = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton_guncelle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_stok_grup_listesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_stok_grup_listesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -147,9 +148,9 @@
             // simpleButton_kaydet
             // 
             this.simpleButton_kaydet.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_kaydet.Image")));
-            this.simpleButton_kaydet.Location = new System.Drawing.Point(296, 373);
+            this.simpleButton_kaydet.Location = new System.Drawing.Point(291, 373);
             this.simpleButton_kaydet.Name = "simpleButton_kaydet";
-            this.simpleButton_kaydet.Size = new System.Drawing.Size(65, 25);
+            this.simpleButton_kaydet.Size = new System.Drawing.Size(70, 25);
             this.simpleButton_kaydet.TabIndex = 2;
             this.simpleButton_kaydet.Text = "Kaydet";
             this.simpleButton_kaydet.Click += new System.EventHandler(this.simpleButton_kaydet_Click);
@@ -157,9 +158,9 @@
             // simpleButton_sil
             // 
             this.simpleButton_sil.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_sil.Image")));
-            this.simpleButton_sil.Location = new System.Drawing.Point(225, 373);
+            this.simpleButton_sil.Location = new System.Drawing.Point(215, 373);
             this.simpleButton_sil.Name = "simpleButton_sil";
-            this.simpleButton_sil.Size = new System.Drawing.Size(65, 25);
+            this.simpleButton_sil.Size = new System.Drawing.Size(70, 25);
             this.simpleButton_sil.TabIndex = 3;
             this.simpleButton_sil.Text = "Sil";
             this.simpleButton_sil.Click += new System.EventHandler(this.simpleButton_sil_Click);
@@ -167,18 +168,29 @@
             // simpleButton_temizle
             // 
             this.simpleButton_temizle.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_temizle.Image")));
-            this.simpleButton_temizle.Location = new System.Drawing.Point(154, 373);
+            this.simpleButton_temizle.Location = new System.Drawing.Point(63, 373);
             this.simpleButton_temizle.Name = "simpleButton_temizle";
-            this.simpleButton_temizle.Size = new System.Drawing.Size(65, 25);
+            this.simpleButton_temizle.Size = new System.Drawing.Size(70, 25);
             this.simpleButton_temizle.TabIndex = 5;
             this.simpleButton_temizle.Text = "Temizle";
             this.simpleButton_temizle.Click += new System.EventHandler(this.simpleButton_temizle_Click);
+            // 
+            // simpleButton_guncelle
+            // 
+            this.simpleButton_guncelle.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton_guncelle.Image")));
+            this.simpleButton_guncelle.Location = new System.Drawing.Point(139, 373);
+            this.simpleButton_guncelle.Name = "simpleButton_guncelle";
+            this.simpleButton_guncelle.Size = new System.Drawing.Size(70, 25);
+            this.simpleButton_guncelle.TabIndex = 6;
+            this.simpleButton_guncelle.Text = "Güncelle";
+            this.simpleButton_guncelle.Click += new System.EventHandler(this.simpleButton_guncelle_Click);
             // 
             // StokGruplari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 402);
+            this.Controls.Add(this.simpleButton_guncelle);
             this.Controls.Add(this.simpleButton_temizle);
             this.Controls.Add(this.simpleButton_kaydet);
             this.Controls.Add(this.simpleButton_sil);
@@ -216,5 +228,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn grup_kodu;
         private DevExpress.XtraGrid.Columns.GridColumn grup_adi;
         private DevExpress.XtraEditors.SimpleButton simpleButton_temizle;
+        private DevExpress.XtraEditors.SimpleButton simpleButton_guncelle;
     }
 }
