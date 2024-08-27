@@ -87,13 +87,7 @@ namespace UretimDemo.Stoklar
         private void StokKarti_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void simpleButton_temizle_Click(object sender, EventArgs e)
-        {
-            ClearTextEdit(true);
-            textEdit_stok_kodu.Focus();
-        }
+        }        
 
         private void GetGrupKodu()
         {
@@ -116,6 +110,22 @@ namespace UretimDemo.Stoklar
             {
                 GetGrupKodu();
             }
+        }
+
+        private void simpleButton_kaydet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton_sil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton_temizle_Click(object sender, EventArgs e)
+        {
+            ClearTextEdit(true);
+            textEdit_stok_kodu.Focus();
         }
     }
 }

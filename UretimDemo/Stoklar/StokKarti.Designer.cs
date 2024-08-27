@@ -145,6 +145,7 @@
             this.simpleButton_sil.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_sil.TabIndex = 3;
             this.simpleButton_sil.Text = "Sil";
+            this.simpleButton_sil.Click += new System.EventHandler(this.simpleButton_sil_Click);
             // 
             // simpleButton_kaydet
             // 
@@ -154,6 +155,7 @@
             this.simpleButton_kaydet.Size = new System.Drawing.Size(65, 25);
             this.simpleButton_kaydet.TabIndex = 2;
             this.simpleButton_kaydet.Text = "Kaydet";
+            this.simpleButton_kaydet.Click += new System.EventHandler(this.simpleButton_kaydet_Click);
             // 
             // simpleButton_stok_listesi
             // 
