@@ -111,5 +111,13 @@ namespace UretimDemo.Stoklar
                 this.Close();
             }
         }
+
+        private void textEdit_grup_adi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SearchData();
+            }
+        }
     }
 }

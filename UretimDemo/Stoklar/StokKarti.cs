@@ -117,5 +117,36 @@ namespace UretimDemo.Stoklar
                 GetGrupKodu();
             }
         }
+
+        private void simpleButton_kaydet_Click(object sender, EventArgs e)
+        {
+            string stok_kodu = textEdit_stok_kodu.Text.Trim();
+            string stok_adi = textEdit_stok_adi.Text.Trim();
+            string grup_kodu = textEdit_grup_kodu.Text.Trim();
+            string fiyat = textEdit_fiyat.Text.Trim();
+            string kdv_orani = textEdit_kdv_orani.Text.Trim();
+
+
+            string query = "";
+            int result = urt.add_sqlserver(query);
+            if (result > 0)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void simpleButton_sil_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButton_guncelle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

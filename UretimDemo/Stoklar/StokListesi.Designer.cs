@@ -35,7 +35,9 @@
             this.textEdit_stok_kodu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit_stok_adi = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit_grup_adi = new DevExpress.XtraEditors.TextEdit();
             this.textEdit_grup_kodu = new DevExpress.XtraEditors.TextEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl_stok_listesi = new DevExpress.XtraGrid.GridControl();
@@ -46,18 +48,16 @@
             this.fiyat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.kdv_orani = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grup_adi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit_grup_adi = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_kodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_adi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_kodu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_stok_listesi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_stok_listesi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -121,6 +121,14 @@
             this.textEdit_stok_adi.TabIndex = 1;
             this.textEdit_stok_adi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit_stok_adi_KeyDown);
             // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(14, 102);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(41, 13);
+            this.labelControl4.TabIndex = 4;
+            this.labelControl4.Text = "Grup Adı";
+            // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(5, 77);
@@ -128,6 +136,14 @@
             this.labelControl3.Size = new System.Drawing.Size(50, 13);
             this.labelControl3.TabIndex = 4;
             this.labelControl3.Text = "Grup Kodu";
+            // 
+            // textEdit_grup_adi
+            // 
+            this.textEdit_grup_adi.Location = new System.Drawing.Point(61, 99);
+            this.textEdit_grup_adi.Name = "textEdit_grup_adi";
+            this.textEdit_grup_adi.Size = new System.Drawing.Size(150, 20);
+            this.textEdit_grup_adi.TabIndex = 2;
+            this.textEdit_grup_adi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit_grup_adi_KeyDown);
             // 
             // textEdit_grup_kodu
             // 
@@ -225,22 +241,6 @@
             this.grup_adi.Visible = true;
             this.grup_adi.VisibleIndex = 3;
             // 
-            // textEdit_grup_adi
-            // 
-            this.textEdit_grup_adi.Location = new System.Drawing.Point(61, 99);
-            this.textEdit_grup_adi.Name = "textEdit_grup_adi";
-            this.textEdit_grup_adi.Size = new System.Drawing.Size(150, 20);
-            this.textEdit_grup_adi.TabIndex = 2;
-            this.textEdit_grup_adi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textEdit_grup_kodu_KeyDown);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(14, 102);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(41, 13);
-            this.labelControl4.TabIndex = 4;
-            this.labelControl4.Text = "Grup Adı";
-            // 
             // StokListesi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,12 +257,12 @@
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_kodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_stok_adi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_kodu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl_stok_listesi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView_stok_listesi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit_grup_adi.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
